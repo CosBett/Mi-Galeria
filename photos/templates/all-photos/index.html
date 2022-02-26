@@ -1,1 +1,3 @@
-{%extends 'all-photos/base.html'%} {% block content %} {{block.super}} {% endblock %}
+{%extends 'all-photos/base.html'%} {% block content %} {{block.super}} {%for image in all_images%}
+<img src="{{}}" alt="">
+<h1>{{image.name}}</h1>{%endfor%}
