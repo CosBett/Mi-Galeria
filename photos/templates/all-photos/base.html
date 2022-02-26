@@ -1,4 +1,4 @@
-{% load django_bootstrap5 %} {% load static %}
+{% load django_bootstrap5 %} {% load static %}{% load fontawesome_6 %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +10,17 @@
   {% else %}
   <title>Mi-Galeria</title>{% endif %} {% block styles %} {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'css/base.css' %}"> {% endblock %}
+  <!-- Tailwind css  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font awesome icons  -->
+  {% fontawesome_6_static %}
+
 </head>
 
 <body>
   {% block content %} {% include 'navbar.html' %}
   <h1>Mi-Galeria</h1>
+  {% include 'footer.html' %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %}{% endblock %}
 </body>
