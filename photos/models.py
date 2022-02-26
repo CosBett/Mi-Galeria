@@ -1,6 +1,4 @@
 from distutils.command.upload import upload
-from multiprocessing import set_forkserver_preload
-from unicodedata import category
 from django.db import models
 from django.forms import ImageField
 
