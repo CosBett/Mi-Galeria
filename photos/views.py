@@ -7,3 +7,8 @@ def index(request):
   all_images = Image.objects.all()
   homepage ={"all_images": all_images}
   return render (request, 'all-photos/index.html', homepage)
+
+def img_location(request, location):
+    images = Image.filter_by_location(location)
+   
+    return render(request, 'all_photos/location.html', {'location_pictures': images})
