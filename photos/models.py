@@ -1,5 +1,8 @@
+from distutils.command.upload import upload
 from multiprocessing import set_forkserver_preload
+from unicodedata import category
 from django.db import models
+from django.forms import ImageField
 
 class Location(models.Model):
   name = models.CharField(max_lenght= 50)
@@ -26,5 +29,11 @@ class Category(models.Model):
 
   def delete_category(self):
     self.delete()  
+    
 class Image(models.Model):
+  image = ImageField(upload_to = 'pictures/')
   name = models.CharField(max_lenght= 50)
+  description = models.CharField(max_length=500)
+  location = models.ForeignKey(Location,on_delete=models.CASCADE)
+  category = models.ForeignKey(Category,on_delete=models.CASCADE)
+  
