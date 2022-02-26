@@ -19,7 +19,17 @@
 
 <body>
   {% include 'navbar.html' %}
-  <h1>Mi-Galeria</h1>{% block content %} {% endblock %} {% include 'footer.html' %}
+  <div class="row container">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <h1>Mi-Galeria</h1>
+      </div>
+    </div>
+    <div class="col-md-8">
+      {% block content %} {% endblock %}
+    </div>
+  </div>
+  {% include 'footer.html' %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %}
 </body>
