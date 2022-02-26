@@ -16,6 +16,15 @@ class Location(models.Model):
 
 class Category(models.Model):
   name = models.CharField(max_lenght= 50)
+  
+  def save_category(self):
+    self.save()
 
+  def update_category(self, name):
+    self.name = name
+    self.save()
+
+  def delete_category(self):
+    self.delete()  
 class Image(models.Model):
   name = models.CharField(max_lenght= 50)
