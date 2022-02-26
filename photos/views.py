@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+# Homepage view function 
+def index(request):
+  homepage = {}
+  return render (request, 'all-photos/index.html', homepage)
