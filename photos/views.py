@@ -9,10 +9,10 @@ def index(request):
     homepage ={"all_images": all_images, 'all_locations':all_locations}
     return render(request, 'all-photos/index.html', homepage)
 
-def img_location(request, location):
+def img_location(request,location):
     images = Image.filter_by_location(location)
     location = {'images':images}
-    return render(request, 'all-photos/location.html', location)
+    return render(request, 'all-photos/location.html',location)
 # def nav_items(request):
 #     all_locations = Location.objects.all()
 #     locations = {'all_locations':all_locations}
