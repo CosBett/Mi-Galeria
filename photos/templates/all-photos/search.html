@@ -1,0 +1,38 @@
+{%extends 'all-photos/base.html'%} {% block content %} {{block.super}}
+<div class="row">
+  {% if images %}{%for image in images%}
+  <h2>Found {{ images|length }} of searched term {{message}}</h2>
+  {% else %}
+  <h2> Found 0 articles for the search term {{message}}</h2>
+  {% endif %}
+</div>
+
+<div class="row">
+  {% if images %}{%for image in images%}
+  <div class="col-md-3">
+    <img data-bs-toggle="modal" data-bs-target="#exampleModal" src="{{image.image.url}}" alt="{{image.name}}" style="width:30vw;border-radius: 15px;">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
+
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-lg   fa-2x"></i></button>
+            </div>
+            <div class="modal-body">
+              <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="width: 100%;"><br>
+              <p class="imgdesc text-center">{{image.description}}</p><br>
+            </div>
+            <div class=" modal-footer ">
+              <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
+              <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%} {% endif %}
+</div>{% endblock %}

@@ -29,7 +29,7 @@ class Category(models.Model):
     self.delete()  
     
 class Image(models.Model):
-  image = models.ImageField(upload_to='pictures/',blank=True)
+  image = models.ImageField(upload_to='pictures',blank=True)
   name = models.CharField(max_length=60)
   description = models.CharField(max_length=1500)
   location = models.ForeignKey(Location,on_delete=models.CASCADE)
@@ -56,8 +56,8 @@ class Image(models.Model):
     return images_results
 
   @classmethod
-  def search_image(cls,category):
-    categoryImg_results = cls.objects.filter(category__name= category)
+  def search_image(cls,search_term):
+    categoryImg_results = cls.objects.filter(category__name= search_term)
     return categoryImg_results
   
   @classmethod
