@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'homepage' %}"><span style="color:black;font-family: 'Lobster', cursive;font-size: 37px;font-weight: 800;">Mi</span><span style="color:#115512; font-size: larger;font-weight: 500;">&nbsp-</span><span style="color:white;font-family: 'Lobster', cursive;font-size: 27px;font-weight: 800;"> Galeria</span>
      </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span ><i class="fa fa-bars fa-lg white-text mr-md-5 mr-3 fa-2x"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="color: white;">
@@ -17,8 +17,7 @@
           <ul style="color:#115512;border-radius: 8%; box-shadow: #115512;padding-left: 12%;width: 10%;" class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdown">
             {% for location in all_locations %}
             <li>
-              <a href="location/{{location.name}}">{{location.name}}</a>
-
+              <a href="/location/{{location.name}}">{{location.name}}</a>
             </li>
             {% endfor %}
           </ul>

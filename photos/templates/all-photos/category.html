@@ -1,7 +1,7 @@
 {%extends 'all-photos/base.html'%} {% block content %} {{block.super}}
 
 <div class="row overflow-auto" style="height:70vh;">
-  {% if images %} {% for image in images %}
+  {% if images %}{% for image in images %}
   <div class="col-md-2 col-sm-4 p-0 ">
     <div class="card-columns" style="padding: 1%; border-radius: 15px;height: fit-content;">
       <img data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}" src="{{image.image.url}}" alt="{{image.name}}" style="object-fit:cover;height: 29vh;border-radius: 3%; margin-bottom: 0;" id="img_poster">
@@ -18,16 +18,14 @@
               <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="object-fit:cover;text-align: center; width:70vh;height: 58vh;border-radius: 3%;"><br>
               <p class="text-center img_description" style="line-height: 90%; font-size: small;font-weight: 400;font-family: 'Yrsa', serif; ">{{image.description}}</p><br>
             </div>
-            <div class=" modal-footer d-flex text-align-center " style="line-height: 50%;">
+            <div class=" modal-footer " style="line-height: 50%;">
               <div class="div" style="color:#EBAD99;font-family:'Yrsa', serif;font-size:small;line-height:0.6;">
                 <span> Category: </span><span class="btn btn-sm btn-outline-success ">{{image.category}}</span>
                 <span> Location: </span><span class="btn btn-sm btn-outline-success ">{{image.location}}</span>
-              </div><br>
-              <input class=" form-control input-lg bg-light " type="text " style=" line-height: 50%;font-size:small; " value="{{image.image.url}} " id="{{image.id}}.url ">
+              </div>
+              <input class="form-control input-lg bg-light " type="text" style=" line-height: 50%;font-size:small; " value="{{image.image.url}} " id="{{image.id}}.url ">
               <!-- <button class="btn btn-success btn-sm " onclick="copyLink( '{{image.id}}.url') ">Copy</button> -->
-              <!-- <button type="button " class="btn btn-outline-danger btn-sm " data-bs-dismiss="modal ">Close </button> -->
-              <h6 style="color:#115512;font-family:'Yrsa', serif;font-size:small;">Copy the image link below to share </h6>
-
+              <!-- <button type="button " class="btn btn-outline-danger btn-sm " data-bs-dismiss="modal">Close </button> -->
             </div>
           </div>
         </div>
