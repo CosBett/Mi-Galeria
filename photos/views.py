@@ -5,8 +5,8 @@ from .models import Location, Image, Category
 def index(request):
     all_images = Image.objects.all()
     all_locations = Location.objects.all()
-
-    homepage ={"all_images": all_images, 'all_locations':all_locations}
+    all_categories = Category.objects.all()
+    homepage ={"all_images": all_images, 'all_locations':all_locations, 'all_categories':all_categories}
     return render(request, 'all-photos/index.html', homepage)
 
 def img_location(request,location):

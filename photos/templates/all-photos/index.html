@@ -1,15 +1,16 @@
 {%extends 'all-photos/base.html'%} {% block content %} {{block.super}}
-<div class="row">
+<div class="row overflow-auto" style="height:70vh;">
   {%for image in all_images%}
-  <div class="col-md-3">
-    <img data-bs-toggle="modal" data-bs-target="#exampleModal" src="{{image.image.url}}" alt="{{image.name}}" style="width:30vw;border-radius: 15px;">
+  <div class="col-md-2 col-sm-4 p-0 ">
+    <div class="card-columns" style="padding: 1%; border-radius: 15px;height: fit-content;">
+      <img data-bs-toggle="modal" data-bs-target="#exampleModal" src="{{image.image.url}}" alt="{{image.name}}" style="object-fit: coverwidth;height: 29vh;border-radius: 3%; margin-bottom: 0;" id="img_poster">
+    </div>
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
-
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-lg   fa-2x"></i></button>
             </div>
             <div class="modal-body">
