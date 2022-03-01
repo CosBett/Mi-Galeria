@@ -35,3 +35,9 @@ def search_results(request):
     else:
         message = 'Please type category to search'
         return render(request, 'all-photos/search.html', {'message':message})
+def categoryImg_results(request,category):
+    images = Image.filter_by_category(category)
+    all_locations = Location.objects.all()
+    all_categories = Category.objects.all()
+    category = {'images':images,'all_locations':all_locations, 'all_categories':all_categories }    
+    return render(request, 'all-photos/category.html',category)

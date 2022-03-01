@@ -1,15 +1,17 @@
-h1 {
-  color: green;
-}
-
-p {
-  line-height: 50%;
-  font-size: x-small;
-  font-family: 'Tangerine', cursive;
-}
-
-
-/* img {
+  h1 {
+    color: green;
+  }
+  
+  h2 {
+    color: brown;
+  }
+  
+  p {
+    line-height: 50%;
+    font-size: x-small;
+    font-family: 'Tangerine', cursive;
+  }
+  /* img {
   max-height: 5%;
   width: 10%;
 } */

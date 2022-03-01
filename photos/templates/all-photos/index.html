@@ -5,7 +5,7 @@
     <div class="card-columns" style="padding: 1%; border-radius: 15px;height: fit-content;">
       <img data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}" src="{{image.image.url}}" alt="{{image.name}}" style="object-fit:cover;height: 29vh;border-radius: 3%; margin-bottom: 0;" id="img_poster">
     </div>
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered rounded-3">
       <div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
@@ -19,8 +19,8 @@
             </div>
             <div class=" modal-footer " style="line-height: 50%;">
               <div class="div" style="color:#EBAD99;font-family:'Yrsa', serif;font-size:small;line-height:0.6;">
-                <span> Category: </span><span class="btn btn-sm btn-outline-success ">{{image.category}}</span>
-                <span> Location: </span><span class="btn btn-sm btn-outline-success ">{{image.location}}</span>
+                <span> Category: </span><span class="btn btn-sm btn-outline-success rounded-pill">{{image.category}}</span>
+                <span> Location: </span><span class="btn btn-sm btn-outline-success rounded-pill">{{image.location}}</span>
               </div>
               <input class="form-control input-lg bg-light " type="text" style=" line-height: 50%;font-size:small; " value="{{image.image.url}} " id="{{image.id}}.url ">
               <!-- <button class="btn btn-success btn-sm " onclick="copyLink( '{{image.id}}.url') ">Copy</button> -->
