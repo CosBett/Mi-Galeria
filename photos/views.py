@@ -15,8 +15,10 @@ def locationImg_results(request,location):
     all_locations = Location.objects.all()
     all_categories = Category.objects.all()
     location = {'images':images,'all_locations':all_locations, 'all_categories':all_categories }
+   
 
     return render(request, 'all-photos/location.html',location)
+
 # def nav_items(request):
 #     all_locations = Location.objects.all()
 #     locations = {'all_locations':all_locations}
