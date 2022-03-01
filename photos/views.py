@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render
 from .models import Location, Image, Category
 
@@ -9,7 +10,7 @@ def index(request):
     homepage ={"all_images": all_images, 'all_locations':all_locations, 'all_categories':all_categories}
     return render(request, 'all-photos/index.html', homepage)
 
-def img_location(request,location):
+def locationImg_results(request,location):
     images = Image.filter_by_location(location)
     location = {'images':images}
     return render(request, 'all-photos/location.html',location)
@@ -19,11 +20,11 @@ def img_location(request,location):
 #     return render(request, '/navbar.html', locations)
 def search_results(request):
     if 'searchImg' in request.GET and request.GET['searchImg']:
-        search_term = request.GET.get('searchImg')
-        searched_images =Image.search_image(search_term)
-        message = f'{search_term}'
-        displayed_images = {'images':searched_images, 'message': message}
-        return render(request, ' all-photos/search.html', displayed_images)
+        category = request.GET.get('searchImg')
+        searched_images =Image.search_by_category(category)
+        message = f'{category}'
+        category_images = {'images':searched_images, 'message': message}
+        return render(request, ' all-photos/search.html', category_images)
     else:
-        message = 'Please type term to search'
+        message = 'Please type category to search'
         return render(request, 'all-photos/search.html', {'message':message})
