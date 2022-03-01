@@ -1,12 +1,11 @@
 {%extends 'all-photos/base.html'%} {% block content %} {{block.super}}
 <div class="row">
-  {% if images %}{%for image in images%}
+  {% if images %}
   <h2>Found {{ images|length }} of searched term {{message}}</h2>
   {% else %}
   <h2> Found 0 articles for the search term {{message}}</h2>
   {% endif %}
 </div>
-
 <div class="row">
   {% if images %}{%for image in images%}
   <div class="col-md-3">
@@ -22,7 +21,7 @@
             </div>
             <div class="modal-body">
               <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="width: 100%;"><br>
-              <p class="imgdesc text-center">{{image.description}}</p><br>
+              <p class="text-center">{{image.description}}</p><br>
             </div>
             <div class=" modal-footer ">
               <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
