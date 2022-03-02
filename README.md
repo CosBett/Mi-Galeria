@@ -1,6 +1,6 @@
 # Mi-Galeria
 
-<a href="" > Live Demo link</a> 
+<a href="https://migaleria.herokuapp.com/" > Live Demo link</a> 
 
 ## Description
 #### 
@@ -29,7 +29,7 @@ The application display photos for various locations and categories, each pictur
 
 ### Usage Instruction
 1. Open your browser (preferably google chrome and active internet connection is required.) and paste the link below;
- or <a href="" > Click here</a> to acess the 
+https://migaleria.herokuapp.com/ or <a href="https://migaleria.herokuapp.com/" > Click here</a> to acess the 
 2. Depending on your needs you can easily maneuver around the page.
 3. The page provides well label guidance to make usage easily understandable and interative.
 
