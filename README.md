@@ -16,8 +16,7 @@ This is a django personal gallery web application to display my photos for other
 ### Image description display modal
 ![Homepage](/static/images/image_display_modal.png)
 
-#### 
-About
+#### About
 The application display photos for various locations and categories, each picture has also name and description of history and details behind the picture.
 
 ### How to Clone this application,
