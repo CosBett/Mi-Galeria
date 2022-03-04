@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "postcss css/tailwind.css -o ../your-django-folder/your-path-to-static/css/tailwind-output.css"
+  }
+}

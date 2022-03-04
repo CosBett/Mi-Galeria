@@ -12,7 +12,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel" style="font-size:large; font-weight:bold;font-family:'Yrsa', serif;color: #115512;">{{image.name}}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-lg   fa-2x"></i></button>
+              <button style="font-weight: 500;font-size: x-large;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</i></button>
             </div>
             <div class="modal-body">
               <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="object-fit:cover;text-align: center; width:70vh;height: 58vh;border-radius: 3%;"><br>
@@ -24,8 +24,8 @@
                 <span> Location: </span><span class="btn btn-sm btn-outline-success ">{{image.location}}</span>
               </div>
               <input class="form-control input-lg bg-light " type="text" style=" line-height: 50%;font-size:small; " value="{{image.image.url}} " id="{{image.id}}.url ">
-              <!-- <button class="btn btn-success btn-sm " onclick="copyLink( '{{image.id}}.url') ">Copy</button> -->
-              <!-- <button type="button " class="btn btn-outline-danger btn-sm " data-bs-dismiss="modal">Close </button> -->
+              <h6 style="color:#115512;font-family:'Yrsa', serif;font-size:small;">Copy the image above to share </h6>
+
             </div>
           </div>
         </div>
